@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdelmoumen Addouli - Portfolio</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    import React, { useState } from 'react';
+import { Briefcase, Award, Mail, ExternalLink, Code, Users, Zap, Shield, Database, Globe, Github, Linkedin } from 'lucide-react';
+
+export default function AbdelmoumenPortfolio() {
+  const [activeTab, setActiveTab] = useState('about');
+
+  const projects = [
+    {
+      id: 1,
+      title: "MY-Event - Event Management App",
+      period: "05/2025 – 07/2025",
+      description: "End-to-end Salesforce Lightning event management application for managing events, locations, organizers, speakers, and attendees.",
+      highlights: [
+        "Custom data models with validation rules, formulas, and roll-ups",
+        "Role-based security using OWD, profiles, roles, and sharing rules",
+        "Apex triggers, batch jobs with >90% test coverage",
+        "External API integration (SmartyStreets) and custom REST services",
+        "Lightning Web Components for event management and search",
+        "Experience Cloud site with authentication and role-based access"
+      ],
+      technologies: ["Apex", "LWC", "REST API", "Experience Cloud", "Batch Jobs"],
+      icon: <Users className="w-6 h-6" />
+    },
+    {
+      id: 2,
+      title: "RSS Feed Automation System",
+      period: "2024",
+      description: "Custom Salesforce solution to retrieve and display daily news from RSS feeds with automated data management.",
+      highlights: [
+        "Custom News object with Title, Publication Date, and Link fields",
+        "Apex classes for daily news retrieval and filtering",
+        "Duplicate prevention logic before record insertion",
+        "LWC homepage integration displaying latest three news entries",
+        "Automated retention policy deleting records older than 4 months",
+        "Optimized data storage and compliance"
+      ],
+      technologies: ["Apex", "LWC", "Scheduled Jobs", "Custom Objects"],
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      id: 3,
+      title: "System Migration & Integration Projects",
+      period: "2023 - Present",
+      description: "Led multiple system migrations and integrations ensuring seamless data flow between platforms.",
+      highlights: [
+        "Meticulous planning, testing, and execution of data transfers",
+        "Sandbox environment management and deployment strategies",
+        "REST API integrations with external systems",
+        "Data integrity through regular audits and validation",
+        "Security compliance with role hierarchy and sharing settings"
+      ],
+      technologies: ["Data Loader", "Flows", "Apex", "REST API", "Salesforce Inspector"],
+      icon: <Database className="w-6 h-6" />
+    }
+  ];
+
+  const skills = [
+    { 
+      category: "Salesforce Platform", 
+      items: ["Lightning Experience", "Sales Cloud", "Experience Cloud", "Omnistudio Vlocity", "Salesforce Agentforce"],
+      icon: <Zap className="w-5 h-5 text-blue-400" />
+    },
+    { 
+      category: "Development", 
+      items: ["Apex", "Lightning Web Components (LWC)", "SOQL/SOSL/DML", "REST APIs", "Batch Jobs"],
+      icon: <Code className="w-5 h-5 text-green-400" />
+    },
+    { 
+      category: "Administration & Automation", 
+      items: ["Flows", "Process Builder", "App Builder", "Data Migration", "Reports & Dashboards"],
+      icon: <Briefcase className="w-5 h-5 text-purple-400" />
+    },
+    { 
+      category: "Security & Data Management", 
+      items: ["Role Hierarchy", "Sharing Settings", "Field Level Security", "Data Loader", "Duplicate Management"],
+      icon: <Shield className="w-5 h-5 text-red-400" />
+    }
+  ];
+
+  const certifications = [
+    { name: "Salesforce Agentforce Specialist", year: "2025", badge: "🤖" },
+    { name: "Salesforce Administrator", year: "2024", badge: "⚡" },
+    { name: "Salesforce Associate", year: "2023", badge: "☁️" }
+  ];
+
+  const experience = [
+    {
+      title: "Salesforce Coach",
+      company: "Ark-X Academy, Rabat",
+      period: "10/2025 - Present",
+      points: [
+        "Delivered practical training on Salesforce Administration and Development",
+        "Mentored students in real-world projects using Flows, Apex, and LWC",
+        "Guided learners toward certification and career readiness",
+        "Contributed to curriculum design and platform best practices"
+      ]
+    },
+    {
+      title: "Salesforce Administrator | Developer",
+      company: "Freelance",
+      period: "2023 - Present",
+      points: [
+        "Led system migrations and integrations across multiple platforms",
+        "Ensured data integrity through regular audits and maintenance",
+        "Maintained security compliance with strict access controls",
+        "Managed profiles, permissions, and data operations"
+      ]
+    },
+    {
+      title: "Volunteer Mentor",
+      company: "ALX - Salesforce Associate & Administrator Program",
+      period: "12-week program",
+      points: [
+        "Guided learners through Salesforce certification program",
+        "Led catch-up sessions addressing technical and interpersonal challenges",
+        "Cultivated inclusive and collaborative learning environment",
+        "Recognized for leadership and commitment to learner success"
+      ]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800">
+      {/* Hero Section */}
+      <header className="bg-gray-800 shadow-2xl border-b border-gray-700">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <img 
+              src="https://raw.githubusercontent.com/AbdoAddouli/portfolio-assets/main/portfolio.jpg" 
+              alt="Abdelmoumen Addouli"
+              className="w-40 h-40 rounded-full object-cover shadow-2xl ring-4 ring-indigo-500"
+            />
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="text-5xl font-bold text-white mb-2">Abdelmoumen Addouli</h1>
+              <p className="text-2xl text-indigo-400 mb-3 font-medium">Salesforce Administrator | Developer | Consultant</p>
+              <p className="text-gray-300 max-w-3xl mb-4 leading-relaxed">
+                Salesforce professional with 3+ years of experience in configuration, automation, Apex, LWC, 
+                data migration, and integrations. Passionate about delivering solutions that optimize business 
+                processes while mentoring the next generation of Salesforce talent.
+              </p>
+              <div className="flex flex-wrap gap-3 mt-6 justify-center md:justify-start">
+                <a href="mailto:addouli.abdelmoumen@gmail.com" className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition shadow-lg">
+                  <Mail className="w-5 h-5" />
+                  Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/abdelmoumen-addouli-246285189/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg">
+                  <Linkedin className="w-5 h-5" />
+                  LinkedIn
+                </a>
+                <a href="https://github.com/AbdoAddouli" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition shadow-lg">
+                  <Github className="w-5 h-5" />
+                  GitHub
+                </a>
+                <a href="https://www.salesforce.com/trailblazer/abdoaddouli" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 border-2 border-indigo-500 text-indigo-400 rounded-lg hover:bg-indigo-950 transition shadow-lg">
+                  <ExternalLink className="w-5 h-5" />
+                  Trailhead
+                </a>
+              </div>
+              <p className="text-gray-400 mt-4">📍 Morocco | 📞 +212 641318265</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Navigation Tabs */}
+      <div className="bg-gray-800 border-b border-gray-700 sticky top-0 z-10 shadow-xl">
+        <div className="max-w-7xl mx-auto px-6">
+          <nav className="flex gap-8 overflow-x-auto">
+            {['about', 'projects', 'skills', 'experience', 'certifications'].map(tab => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`py-4 border-b-2 transition whitespace-nowrap font-medium ${
+                  activeTab === tab
+                    ? 'border-indigo-500 text-indigo-400'
+                    : 'border-transparent text-gray-400 hover:text-gray-200'
+                }`}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Content */}
+      <main className="max-w-7xl mx-auto px-6 py-12">
+        {/* About Tab */}
+        {activeTab === 'about' && (
+          <div className="space-y-8">
+            <div className="bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-700">
+              <h2 className="text-3xl font-bold text-white mb-6">About Me</h2>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                I'm a dedicated Salesforce professional with a strong background in both administration and development. 
+                My journey in the Salesforce ecosystem has been marked by hands-on experience in building custom solutions, 
+                automating business processes, and ensuring platform security and best practices.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Beyond technical expertise, I'm passionate about education and mentorship. As a Salesforce Coach at Ark-X 
+                Academy and a volunteer mentor with ALX, I've had the privilege of guiding aspiring Salesforce professionals 
+                toward certification and career success.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mt-8">
+                <div className="bg-gradient-to-br from-blue-900 to-indigo-900 p-6 rounded-lg border border-blue-800">
+                  <h3 className="font-bold text-white mb-2 text-xl">3+ Years</h3>
+                  <p className="text-gray-300">Salesforce Experience</p>
+                </div>
+                <div className="bg-gradient-to-br from-green-900 to-emerald-900 p-6 rounded-lg border border-green-800">
+                  <h3 className="font-bold text-white mb-2 text-xl">3 Certifications</h3>
+                  <p className="text-gray-300">Salesforce Certified</p>
+                </div>
+                <div className="bg-gradient-to-br from-purple-900 to-pink-900 p-6 rounded-lg border border-purple-800">
+                  <h3 className="font-bold text-white mb-2 text-xl">Multiple Projects</h3>
+                  <p className="text-gray-300">Successfully Delivered</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Projects Tab */}
+        {activeTab === 'projects' && (
+          <div className="space-y-6">
+            {projects.map(project => (
+              <div key={project.id} className="bg-gray-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-indigo-900/20 transition border border-gray-700">
+                <div className="p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 bg-indigo-900 rounded-lg flex items-center justify-center flex-shrink-0 border border-indigo-700">
+                      {project.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-white mb-1">{project.title}</h3>
+                      <p className="text-indigo-400 font-medium">{project.period}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+                  <div className="bg-gray-900 rounded-lg p-4 mb-4 border border-gray-700">
+                    <h4 className="font-semibold text-white mb-3">Key Highlights:</h4>
+                    <ul className="space-y-2">
+                      {project.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-gray-300">
+                          <span className="text-indigo-400 mt-1">•</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, idx) => (
+                      <span key={idx} className="px-4 py-2 bg-indigo-900 text-indigo-300 rounded-full text-sm font-medium border border-indigo-700">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Skills Tab */}
+        {activeTab === 'skills' && (
+          <div className="grid md:grid-cols-2 gap-6">
+            {skills.map((skillGroup, idx) => (
+              <div key={idx} className="bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-700">
+                <div className="flex items-center gap-3 mb-6">
+                  {skillGroup.icon}
+                  <h3 className="text-2xl font-bold text-white">{skillGroup.category}</h3>
+                </div>
+                <ul className="space-y-3">
+                  {skillGroup.items.map((skill, skillIdx) => (
+                    <li key={skillIdx} className="flex items-center gap-3 text-gray-300">
+                      <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
+                      <span className="text-lg">{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Experience Tab */}
+        {activeTab === 'experience' && (
+          <div className="space-y-6">
+            {experience.map((exp, idx) => (
+              <div key={idx} className="bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-700">
+                <div className="border-l-4 border-indigo-500 pl-6">
+                  <h3 className="text-2xl font-bold text-white mb-1">{exp.title}</h3>
+                  <p className="text-indigo-400 font-medium text-lg mb-1">{exp.company}</p>
+                  <p className="text-gray-400 mb-4">{exp.period}</p>
+                  <ul className="space-y-3">
+                    {exp.points.map((point, pointIdx) => (
+                      <li key={pointIdx} className="flex items-start gap-3 text-gray-300">
+                        <span className="text-indigo-400 mt-1 text-xl">→</span>
+                        <span className="leading-relaxed">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Certifications Tab */}
+        {activeTab === 'certifications' && (
+          <div className="grid md:grid-cols-3 gap-6">
+            {certifications.map((cert, idx) => (
+              <div key={idx} className="bg-gray-800 rounded-xl shadow-2xl p-8 text-center hover:shadow-indigo-900/30 transition border border-gray-700">
+                <div className="text-6xl mb-4">{cert.badge}</div>
+                <div className="w-16 h-16 bg-indigo-900 rounded-full flex items-center justify-center mx-auto mb-4 border border-indigo-700">
+                  <Award className="w-8 h-8 text-indigo-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{cert.name}</h3>
+                <p className="text-indigo-400 font-medium">{cert.year}</p>
+                <p className="text-gray-400 text-sm mt-2">Salesforce</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 border-t border-gray-700 mt-16">
+        <div className="max-w-7xl mx-auto px-6 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400">© 2026 Abdelmoumen Addouli. Built with Salesforce Experience Cloud.</p>
+            <div className="flex gap-4 text-gray-400">
+              <span>🇲🇦 Morocco</span>
+              <span>•</span>
+              <span>Languages: Arabic (Native), English (Fluent), French (Intermediate)</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+    
+    
+  </script>
+</body>
+</html>
